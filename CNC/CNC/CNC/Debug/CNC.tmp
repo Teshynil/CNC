@@ -1,22 +1,22 @@
 <ASSEMBLER_INFO>
  <VERSION>2.2.7</VERSION>
  <DEVICE>"ATmega328P"</DEVICE>
- <WORKING_DIR>C:\Users\Cisco\Documents\CNC\CNC\CNC\Debug</WORKING_DIR>
+ <WORKING_DIR>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc</FILE>
-  <FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\avrmacros.inc</FILE>
-  <FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc</FILE>
-  <FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\div.inc</FILE>
-  <FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\serial.inc</FILE>
+  <FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\avrmacros.inc</FILE>
+  <FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc</FILE>
+  <FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\div.inc</FILE>
+  <FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\serial.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\Debug\CNC.obj</FILE>
+  <FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\Debug\CNC.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>CNC.hex</FILE>
@@ -26,26 +26,26 @@
   <FILE>CNC.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <dfase><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc</FILE><LINE>2</LINE></dfase>
-  <stepSize><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc</FILE><LINE>3</LINE></stepSize>
-  <apos><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc</FILE><LINE>4</LINE></apos>
-  <inbuf><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\serial.inc</FILE><LINE>2</LINE></inbuf>
-  <outbuf><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\serial.inc</FILE><LINE>3</LINE></outbuf>
-  <msg_config><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>10</LINE></msg_config>
-  <msg_error_config><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>11</LINE></msg_error_config>
-  <msg_welcome><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>12</LINE></msg_welcome>
-  <start><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>16</LINE></start>
-  <clear><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>65</LINE></clear>
-  <config_loop><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>32</LINE></config_loop>
-  <xadd><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>79</LINE></xadd>
-  <yadd><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>84</LINE></yadd>
-  <xsub><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>94</LINE></xsub>
-  <ysub><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>99</LINE></ysub>
-  <loop><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>49</LINE></loop>
-  <error><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>44</LINE></error>
-  <println><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>60</LINE></println>
-  <gets><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>57</LINE></gets>
-  <zadd><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>89</LINE></zadd>
-  <zsub><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>104</LINE></zsub>
+  <dfase><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc</FILE><LINE>2</LINE></dfase>
+  <stepSize><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc</FILE><LINE>3</LINE></stepSize>
+  <apos><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc</FILE><LINE>4</LINE></apos>
+  <inbuf><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\serial.inc</FILE><LINE>2</LINE></inbuf>
+  <outbuf><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\serial.inc</FILE><LINE>3</LINE></outbuf>
+  <msg_config><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>10</LINE></msg_config>
+  <msg_error_config><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>11</LINE></msg_error_config>
+  <msg_welcome><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>12</LINE></msg_welcome>
+  <start><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>16</LINE></start>
+  <clear><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>67</LINE></clear>
+  <config_loop><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>32</LINE></config_loop>
+  <error><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>43</LINE></error>
+  <loop><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>48</LINE></loop>
+  <println><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>62</LINE></println>
+  <gets><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>59</LINE></gets>
+  <xadd><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>81</LINE></xadd>
+  <yadd><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>86</LINE></yadd>
+  <zadd><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>91</LINE></zadd>
+  <xsub><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>96</LINE></xsub>
+  <ysub><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>101</LINE></ysub>
+  <zsub><FILE>C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm</FILE><LINE>106</LINE></zsub>
  </LABELS>
 </ASSEMBLER_INFO>

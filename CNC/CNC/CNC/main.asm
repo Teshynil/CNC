@@ -10,9 +10,9 @@
 msg_config: .db "Inserta la cantidad de pasos que representa un punto(1-8): ",'$'
 msg_error_config: .db "Valor invalido intenta otra vez",13,10,'$'
 msg_welcome: .db "Inserte su codigo G debe finalizar con el codigo M00:",13,10,'$'
-.equ   baud=4800      ;baudios
-.equ   fosc=1000000   ;frecuencia
-;.equ   fosc=8000000   ;frecuencia
+.equ   baud=9600      ;baudios
+;.equ   fosc=1000000   ;frecuencia
+.equ   fosc=8000000   ;frecuencia
 start:
 ;==========================================
 ;Inicializacion del stack
@@ -30,16 +30,15 @@ start:
 	initSerial
 	call clear
 config_loop:
-	/*puts msg_config,0
+	puts msg_config,0
 	getn t0,1
 	cpi t0,0
 	breq error
 	cpi t0,9
-	breq error*/
+	breq error
 	initCNC t0
-	cnctest
+	//cnctest
 	call clear
-	puts msg_welcome,0
 	call loop
 error:
 	call println
@@ -47,6 +46,9 @@ error:
 	rjmp config_loop
 
 loop:
+	puts msg_welcome,0
+	x_add
+rjmp loop
 	putci '>'
 	call gets
 	call println

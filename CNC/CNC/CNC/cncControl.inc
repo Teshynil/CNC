@@ -19,7 +19,7 @@ apos:		.byte 1
 	stsi dfase+2,0xa
 	stsi dfase+3,0x9
 	sts stepSize,@0
-	stsi apos,0x0
+	stsi apos,0x00
 .endm
 
 .macro cnctest
@@ -27,25 +27,25 @@ apos:		.byte 1
 	cnl1:
 	call xadd
 		dec t0
-		delay 100
+		//delay 1000
 	brne cnl1
 	ldi t0,50
 	cnl2:
 	call yadd
 		dec t0
-		delay 100
+		delay 1000
 	brne cnl2
 	ldi t0,50
 	cnl3:
 	call xsub
 		dec t0
-		delay 100
+		delay 1000
 	brne cnl3
 	ldi t0,50
 	cnl4:
 	call ysub
 		dec t0
-		delay 100
+		delay 1000
 	brne cnl4
 .endm
 

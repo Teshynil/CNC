@@ -1,24 +1,24 @@
 
-AVRASM ver. 2.2.7  C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm Tue Dec 05 21:12:26 2017
+AVRASM ver. 2.2.7  C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm Wed Dec 06 04:27:19 2017
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(2): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\avrmacros.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc(6): warning: Register r16 already defined by the .DEF directive
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc' included form here
-C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc(7): warning: Register r17 already defined by the .DEF directive
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc' included form here
-C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc(8): warning: Register r18 already defined by the .DEF directive
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc' included form here
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(4): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\div.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\serial.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(2): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\avrmacros.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(3): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc(6): warning: Register r16 already defined by the .DEF directive
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(3): 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc' included form here
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc(7): warning: Register r17 already defined by the .DEF directive
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(3): 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc' included form here
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc(8): warning: Register r18 already defined by the .DEF directive
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(3): 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc' included form here
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(4): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\div.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\serial.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(2): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\avrmacros.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(4): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\div.inc'
-C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\serial.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(2): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\avrmacros.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(3): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\cncControl.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(4): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\div.inc'
+C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Carlos\Documents\CNC\CNC\CNC\CNC\serial.inc'
                                  
                                  .include "m328pdef.inc"		; definición de registros, bits y constantes del micro 
                                  
@@ -1236,7 +1236,7 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  	stsi dfase+2,0xa
                                  	stsi dfase+3,0x9
                                  	sts stepSize,@0
-                                 	stsi apos,0x0
+                                 	stsi apos,0x00
                                  .endm
                                  
                                  .macro cnctest
@@ -1244,25 +1244,25 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  	cnl1:
                                  	call xadd
                                  		dec t0
-                                 		delay 100
+                                 		//delay 1000
                                  	brne cnl1
                                  	ldi t0,50
                                  	cnl2:
                                  	call yadd
                                  		dec t0
-                                 		delay 100
+                                 		delay 1000
                                  	brne cnl2
                                  	ldi t0,50
                                  	cnl3:
                                  	call xsub
                                  		dec t0
-                                 		delay 100
+                                 		delay 1000
                                  	brne cnl3
                                  	ldi t0,50
                                  	cnl4:
                                  	call ysub
                                  		dec t0
-                                 		delay 100
+                                 		delay 1000
                                  	brne cnl4
                                  .endm
                                  
@@ -1704,9 +1704,9 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
 000048 3030
 000049 0d3a
 00004a 240a                      msg_welcome: .db "Inserte su codigo G debe finalizar con el codigo M00:",13,10,'$'
-                                 .equ   baud=4800      ;baudios
-                                 .equ   fosc=1000000   ;frecuencia
-                                 ;.equ   fosc=8000000   ;frecuencia
+                                 .equ   baud=9600      ;baudios
+                                 ;.equ   fosc=1000000   ;frecuencia
+                                 .equ   fosc=8000000   ;frecuencia
                                  start:
                                  ;==========================================
                                  ;Inicializacion del stack
@@ -1753,7 +1753,7 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
 000070 931f
 000071 930f
 000072 e010
-000073 e00c
+000073 e303
 000074 9310 00c5
 000076 9300 00c4
 000078 e108
@@ -1763,606 +1763,565 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
 00007e 912f
 00007f 911f
 000080 910f                      	initSerial
-000081 940e 01f4                 	call clear
+000081 940e 01d6                 	call clear
                                  config_loop:
-                                 	/*puts msg_config,0
-                                 	getn t0,1
-                                 	cpi t0,0
-                                 	breq error
-                                 	cpi t0,9
-                                 	breq error*/
 000083 930f
 000084 931f
 000085 930f
-000086 e005
-000087 9300 0100
-000089 912f
-00008a 911f
-00008b 910f
-00008c 930f
-00008d 931f
-00008e 930f
-00008f e006
-000090 9300 0101
-000092 912f
-000093 911f
-000094 910f
-000095 930f
-000096 931f
-000097 930f
-000098 e00a
-000099 9300 0102
-00009b 912f
-00009c 911f
-00009d 910f
-00009e 930f
-00009f 931f
-0000a0 930f
-0000a1 e009
-0000a2 9300 0103
-0000a4 912f
-0000a5 911f
-0000a6 910f
-0000a7 9300 0104
-0000a9 930f
-0000aa 931f
-0000ab 930f
-0000ac e000
-0000ad 9300 0105
-0000af 912f
-0000b0 911f
-0000b1 910f                      	initCNC t0
-0000b2 e302
-0000b3 940e 027d
-0000b5 950a
-0000b6 930f
-0000b7 931f
-0000b8 930f
-0000b9 93ef
-0000ba 93ff
-0000bb e6e4
-0000bc e0f0
-0000bd e002
-0000be e41b
-0000bf 951a
-0000c0 f7f1
-0000c1 950a
-0000c2 f7e1
-0000c3 0000
-0000c4 9731
-0000c5 30e0
-0000c6 f7b1
-0000c7 30f0
-0000c8 f7a1
-0000c9 91ff
-0000ca 91ef
+000086 93ef
+000087 93ff
+000088 e0e0
+000089 e0f0
+00008a 9105
+00008b 3204
+00008c f069
+00008d 930f
+00008e 931f
+00008f 930f
+000090 9100 00c0
+000092 ff05
+000093 cffc
+000094 912f
+000095 911f
+000096 910f
+000097 9300 00c6
+000099 cff0
+00009a 91ff
+00009b 91ef
+00009c 912f
+00009d 911f
+00009e 910f                      	puts msg_config,0
+00009f 930f
+0000a0 931f
+0000a1 930f
+0000a2 9100 00c0
+0000a4 ff07
+0000a5 cffc
+0000a6 9100 00c6
+0000a8 2f10
+0000a9 5300
+0000aa f01a
+0000ab 300a
+0000ac f40c
+0000ad c001
+0000ae cff3
+0000af 930f
+0000b0 931f
+0000b1 930f
+0000b2 9100 00c0
+0000b4 ff05
+0000b5 cffc
+0000b6 912f
+0000b7 911f
+0000b8 910f
+0000b9 9310 00c6
+0000bb 912f
+0000bc 911f
+0000bd 910f
+0000be 9100 00c6
+0000c0 5300                      	getn t0,1
+0000c1 3000                      	cpi t0,0
+0000c2 f1a9                      	breq error
+0000c3 3009                      	cpi t0,9
+0000c4 f199                      	breq error
+0000c5 930f
+0000c6 931f
+0000c7 930f
+0000c8 e005
+0000c9 9300 0100
 0000cb 912f
 0000cc 911f
 0000cd 910f
-0000ce f721
-0000cf e302
-0000d0 940e 0294
-0000d2 950a
-0000d3 930f
-0000d4 931f
-0000d5 930f
-0000d6 93ef
-0000d7 93ff
-0000d8 e6e4
-0000d9 e0f0
-0000da e002
-0000db e41b
-0000dc 951a
-0000dd f7f1
-0000de 950a
-0000df f7e1
-0000e0 0000
-0000e1 9731
-0000e2 30e0
-0000e3 f7b1
-0000e4 30f0
-0000e5 f7a1
-0000e6 91ff
-0000e7 91ef
-0000e8 912f
-0000e9 911f
-0000ea 910f
-0000eb f721
-0000ec e302
-0000ed 940e 02c4
-0000ef 950a
-0000f0 930f
-0000f1 931f
-0000f2 930f
-0000f3 93ef
-0000f4 93ff
-0000f5 e6e4
-0000f6 e0f0
-0000f7 e002
-0000f8 e41b
-0000f9 951a
-0000fa f7f1
-0000fb 950a
-0000fc f7e1
-0000fd 0000
-0000fe 9731
-0000ff 30e0
-000100 f7b1
-000101 30f0
-000102 f7a1
-000103 91ff
-000104 91ef
-000105 912f
-000106 911f
-000107 910f
-000108 f721
-000109 e302
-00010a 940e 02db
-00010c 950a
-00010d 930f
-00010e 931f
-00010f 930f
-000110 93ef
-000111 93ff
-000112 e6e4
-000113 e0f0
-000114 e002
-000115 e41b
-000116 951a
-000117 f7f1
-000118 950a
-000119 f7e1
-00011a 0000
-00011b 9731
-00011c 30e0
-00011d f7b1
-00011e 30f0
-00011f f7a1
-000120 91ff
-000121 91ef
-000122 912f
-000123 911f
-000124 910f
-000125 f721                      	cnctest
-000126 940e 01f4                 	call clear
-000128 930f
-000129 931f
-00012a 930f
-00012b 93ef
-00012c 93ff
-00012d e5ee
-00012e e0f0
-00012f 9105
-000130 3204
-000131 f069
-000132 930f
-000133 931f
-000134 930f
-000135 9100 00c0
-000137 ff05
-000138 cffc
-000139 912f
-00013a 911f
-00013b 910f
-00013c 9300 00c6
-00013e cff0
-00013f 91ff
-000140 91ef
-000141 912f
-000142 911f
-000143 910f                      	puts msg_welcome,0
-000144 940e 0165                 	call loop
+0000ce 930f
+0000cf 931f
+0000d0 930f
+0000d1 e006
+0000d2 9300 0101
+0000d4 912f
+0000d5 911f
+0000d6 910f
+0000d7 930f
+0000d8 931f
+0000d9 930f
+0000da e00a
+0000db 9300 0102
+0000dd 912f
+0000de 911f
+0000df 910f
+0000e0 930f
+0000e1 931f
+0000e2 930f
+0000e3 e009
+0000e4 9300 0103
+0000e6 912f
+0000e7 911f
+0000e8 910f
+0000e9 9300 0104
+0000eb 930f
+0000ec 931f
+0000ed 930f
+0000ee e000
+0000ef 9300 0105
+0000f1 912f
+0000f2 911f
+0000f3 910f                      	initCNC t0
+                                 	//cnctest
+0000f4 940e 01d6                 	call clear
+0000f6 940e 0117                 	call loop
                                  error:
-000146 940e 01d9                 	call println
+0000f8 940e 01bb                 	call println
+0000fa 930f
+0000fb 931f
+0000fc 930f
+0000fd 93ef
+0000fe 93ff
+0000ff e3ec
+000100 e0f0
+000101 9105
+000102 3204
+000103 f069
+000104 930f
+000105 931f
+000106 930f
+000107 9100 00c0
+000109 ff05
+00010a cffc
+00010b 912f
+00010c 911f
+00010d 910f
+00010e 9300 00c6
+000110 cff0
+000111 91ff
+000112 91ef
+000113 912f
+000114 911f
+000115 910f                      	puts msg_error_config,0
+000116 cf6c                      	rjmp config_loop
+                                 
+                                 loop:
+000117 930f
+000118 931f
+000119 930f
+00011a 93ef
+00011b 93ff
+00011c e5ee
+00011d e0f0
+00011e 9105
+00011f 3204
+000120 f069
+000121 930f
+000122 931f
+000123 930f
+000124 9100 00c0
+000126 ff05
+000127 cffc
+000128 912f
+000129 911f
+00012a 910f
+00012b 9300 00c6
+00012d cff0
+00012e 91ff
+00012f 91ef
+000130 912f
+000131 911f
+000132 910f                      	puts msg_welcome,0
+000133 9100 0105
+000135 7003
+000136 9503
+000137 3004
+000138 f409
+000139 e000
+00013a 9110 0105
+00013c 7f1c
+00013d 2b01
+00013e 9300 0105
+000140 e0a0
+000141 e0b1
+000142 7010
+000143 0fa0
+000144 1fb1
+000145 910c
+000146 b905                      	x_add
+000147 cfcf                      rjmp loop
 000148 930f
 000149 931f
 00014a 930f
-00014b 93ef
-00014c 93ff
-00014d e3ec
-00014e e0f0
-00014f 9105
-000150 3204
-000151 f069
-000152 930f
-000153 931f
-000154 930f
-000155 9100 00c0
-000157 ff05
-000158 cffc
-000159 912f
-00015a 911f
-00015b 910f
-00015c 9300 00c6
-00015e cff0
-00015f 91ff
-000160 91ef
-000161 912f
-000162 911f
-000163 910f                      	puts msg_error_config,0
-000164 cf1e                      	rjmp config_loop
-                                 
-                                 loop:
-000165 930f
-000166 931f
-000167 930f
-000168 9100 00c0
-00016a ff05
-00016b cffc
-00016c e30e
-00016d 9300 00c6
-00016f 912f
-000170 911f
-000171 910f                      	putci '>'
-000172 940e 0190                 	call gets
-000174 940e 01d9                 	call println
-000176 930f
-000177 931f
-000178 930f
-000179 93ef
-00017a 93ff
-00017b eee8
-00017c e0f3
-00017d e002
-00017e e41b
-00017f 951a
-000180 f7f1
-000181 950a
-000182 f7e1
-000183 0000
-000184 9731
-000185 30e0
-000186 f7b1
-000187 30f0
-000188 f7a1
-000189 91ff
-00018a 91ef
-00018b 912f
-00018c 911f
-00018d 910f                      	delay 1000
-00018e cfd6                      rjmp loop
-00018f 9508                      ret
+00014b 9100 00c0
+00014d ff05
+00014e cffc
+00014f e30e
+000150 9300 00c6
+000152 912f
+000153 911f
+000154 910f                      	putci '>'
+000155 940e 0172                 	call gets
+000157 940e 01bb                 	call println
+000159 930f
+00015a 931f
+00015b 930f
+00015c 93ef
+00015d 93ff
+00015e eee8
+00015f e0f3
+000160 e02b
+000161 e633
+000162 953a
+000163 f7f1
+000164 952a
+000165 f7e1
+000166 9731
+000167 30e0
+000168 f7b9
+000169 30f0
+00016a f7a9
+00016b 91ff
+00016c 91ef
+00016d 912f
+00016e 911f
+00016f 910f                      	delay 1000
+000170 cfa6                      rjmp loop
+000171 9508                      ret
                                  
                                  gets:
+000172 930f
+000173 931f
+000174 930f
+000175 93ef
+000176 93ff
+000177 e0e6
+000178 e0f1
+000179 2711
+00017a 930f
+00017b 931f
+00017c 930f
+00017d 9100 00c0
+00017f ff07
+000180 cffc
+000181 912f
+000182 911f
+000183 910f
+000184 9100 00c6
+000186 300d
+000187 f129
+000188 3008
+000189 f489
+00018a 3010
+00018b f371
+00018c 951a
+00018d 9731
+00018e 930f
+00018f 931f
 000190 930f
-000191 931f
-000192 930f
-000193 93ef
-000194 93ff
-000195 e0e6
-000196 e0f1
-000197 2711
-000198 930f
-000199 931f
-00019a 930f
-00019b 9100 00c0
-00019d ff07
-00019e cffc
-00019f 912f
-0001a0 911f
-0001a1 910f
-0001a2 9100 00c6
-0001a4 300d
-0001a5 f129
-0001a6 3008
-0001a7 f489
-0001a8 3010
-0001a9 f371
-0001aa 951a
-0001ab 9731
-0001ac 930f
-0001ad 931f
-0001ae 930f
-0001af 9100 00c0
-0001b1 ff05
-0001b2 cffc
-0001b3 912f
-0001b4 911f
-0001b5 910f
-0001b6 9300 00c6
-0001b8 cfdf
-0001b9 930f
-0001ba 931f
-0001bb 930f
-0001bc 9100 00c0
-0001be ff05
-0001bf cffc
-0001c0 912f
-0001c1 911f
-0001c2 910f
-0001c3 9300 00c6
-0001c5 8300
-0001c6 9513
-0001c7 9631
-0001c8 3613
-0001c9 f671
-0001ca c000
-0001cb 930f
-0001cc 931f
-0001cd 930f
-0001ce e204
-0001cf 8300
-0001d0 912f
-0001d1 911f
-0001d2 910f
-0001d3 91ff
-0001d4 91ef
-0001d5 912f
-0001d6 911f
-0001d7 910f                      	fgets
-0001d8 9508                      ret
+000191 9100 00c0
+000193 ff05
+000194 cffc
+000195 912f
+000196 911f
+000197 910f
+000198 9300 00c6
+00019a cfdf
+00019b 930f
+00019c 931f
+00019d 930f
+00019e 9100 00c0
+0001a0 ff05
+0001a1 cffc
+0001a2 912f
+0001a3 911f
+0001a4 910f
+0001a5 9300 00c6
+0001a7 8300
+0001a8 9513
+0001a9 9631
+0001aa 3613
+0001ab f671
+0001ac c000
+0001ad 930f
+0001ae 931f
+0001af 930f
+0001b0 e204
+0001b1 8300
+0001b2 912f
+0001b3 911f
+0001b4 910f
+0001b5 91ff
+0001b6 91ef
+0001b7 912f
+0001b8 911f
+0001b9 910f                      	fgets
+0001ba 9508                      ret
                                  println:
+0001bb 930f
+0001bc 931f
+0001bd 930f
+0001be 9100 00c0
+0001c0 ff05
+0001c1 cffc
+0001c2 e00d
+0001c3 9300 00c6
+0001c5 912f
+0001c6 911f
+0001c7 910f                      	putci 13
+0001c8 930f
+0001c9 931f
+0001ca 930f
+0001cb 9100 00c0
+0001cd ff05
+0001ce cffc
+0001cf e00a
+0001d0 9300 00c6
+0001d2 912f
+0001d3 911f
+0001d4 910f                      	putci 10
+0001d5 9508                      ret
+                                  
+                                 clear:
+0001d6 930f
+0001d7 931f
+0001d8 930f                      	save
 0001d9 930f
 0001da 931f
 0001db 930f
 0001dc 9100 00c0
 0001de ff05
 0001df cffc
-0001e0 e00d
+0001e0 e10b
 0001e1 9300 00c6
 0001e3 912f
 0001e4 911f
-0001e5 910f                      	putci 13
+0001e5 910f                      		putci 033
 0001e6 930f
 0001e7 931f
 0001e8 930f
 0001e9 9100 00c0
 0001eb ff05
 0001ec cffc
-0001ed e00a
+0001ed e50b
 0001ee 9300 00c6
 0001f0 912f
 0001f1 911f
-0001f2 910f                      	putci 10
-0001f3 9508                      ret
-                                  
-                                 clear:
-0001f4 930f
-0001f5 931f
-0001f6 930f                      	save
-0001f7 930f
-0001f8 931f
-0001f9 930f
-0001fa 9100 00c0
-0001fc ff05
-0001fd cffc
-0001fe e10b
-0001ff 9300 00c6
-000201 912f
-000202 911f
-000203 910f                      		putci 033
-000204 930f
-000205 931f
-000206 930f
-000207 9100 00c0
-000209 ff05
-00020a cffc
-00020b e50b
-00020c 9300 00c6
-00020e 912f
-00020f 911f
-000210 910f                      		putci '['
-000211 930f
-000212 931f
-000213 930f
-000214 9100 00c0
-000216 ff05
-000217 cffc
-000218 e302
-000219 9300 00c6
-00021b 912f
-00021c 911f
-00021d 910f                      		putci '2'
-00021e 930f
-00021f 931f
-000220 930f
-000221 9100 00c0
-000223 ff05
-000224 cffc
-000225 e40a
-000226 9300 00c6
-000228 912f
-000229 911f
-00022a 910f                      		putci 'J'
-00022b 930f
-00022c 931f
-00022d 930f
-00022e 9100 00c0
-000230 ff05
-000231 cffc
-000232 e10b
-000233 9300 00c6
-000235 912f
-000236 911f
-000237 910f                      		putci 033
-000238 930f
-000239 931f
-00023a 930f
-00023b 9100 00c0
-00023d ff05
-00023e cffc
-00023f e50b
-000240 9300 00c6
-000242 912f
-000243 911f
-000244 910f                      		putci '['
-000245 930f
-000246 931f
-000247 930f
-000248 9100 00c0
-00024a ff05
-00024b cffc
-00024c e300
-00024d 9300 00c6
-00024f 912f
-000250 911f
-000251 910f                      		putci '0'
-000252 930f
-000253 931f
-000254 930f
-000255 9100 00c0
-000257 ff05
-000258 cffc
-000259 e30b
-00025a 9300 00c6
-00025c 912f
-00025d 911f
-00025e 910f                      		putci ';'
-00025f 930f
-000260 931f
-000261 930f
-000262 9100 00c0
-000264 ff05
-000265 cffc
-000266 e300
-000267 9300 00c6
-000269 912f
-00026a 911f
-00026b 910f                      		putci '0'
-00026c 930f
-00026d 931f
-00026e 930f
-00026f 9100 00c0
-000271 ff05
-000272 cffc
-000273 e408
-000274 9300 00c6
-000276 912f
-000277 911f
-000278 910f                      		putci 'H'
-000279 912f
-00027a 911f
-00027b 910f                      	load
-00027c 9508                      ret
+0001f2 910f                      		putci '['
+0001f3 930f
+0001f4 931f
+0001f5 930f
+0001f6 9100 00c0
+0001f8 ff05
+0001f9 cffc
+0001fa e302
+0001fb 9300 00c6
+0001fd 912f
+0001fe 911f
+0001ff 910f                      		putci '2'
+000200 930f
+000201 931f
+000202 930f
+000203 9100 00c0
+000205 ff05
+000206 cffc
+000207 e40a
+000208 9300 00c6
+00020a 912f
+00020b 911f
+00020c 910f                      		putci 'J'
+00020d 930f
+00020e 931f
+00020f 930f
+000210 9100 00c0
+000212 ff05
+000213 cffc
+000214 e10b
+000215 9300 00c6
+000217 912f
+000218 911f
+000219 910f                      		putci 033
+00021a 930f
+00021b 931f
+00021c 930f
+00021d 9100 00c0
+00021f ff05
+000220 cffc
+000221 e50b
+000222 9300 00c6
+000224 912f
+000225 911f
+000226 910f                      		putci '['
+000227 930f
+000228 931f
+000229 930f
+00022a 9100 00c0
+00022c ff05
+00022d cffc
+00022e e300
+00022f 9300 00c6
+000231 912f
+000232 911f
+000233 910f                      		putci '0'
+000234 930f
+000235 931f
+000236 930f
+000237 9100 00c0
+000239 ff05
+00023a cffc
+00023b e30b
+00023c 9300 00c6
+00023e 912f
+00023f 911f
+000240 910f                      		putci ';'
+000241 930f
+000242 931f
+000243 930f
+000244 9100 00c0
+000246 ff05
+000247 cffc
+000248 e300
+000249 9300 00c6
+00024b 912f
+00024c 911f
+00024d 910f                      		putci '0'
+00024e 930f
+00024f 931f
+000250 930f
+000251 9100 00c0
+000253 ff05
+000254 cffc
+000255 e408
+000256 9300 00c6
+000258 912f
+000259 911f
+00025a 910f                      		putci 'H'
+00025b 912f
+00025c 911f
+00025d 910f                      	load
+00025e 9508                      ret
                                  xadd:
-00027d 930f                      	push t0
-00027e 9100 0105
-000280 7003
-000281 9503
-000282 3004
-000283 f409
-000284 e000
-000285 9110 0105
-000287 7f1c
-000288 2b01
-000289 9300 0105
-00028b e0a0
-00028c e0b1
-00028d 7010
-00028e 0fa0
-00028f 1fb1
-000290 910c
-000291 b905                      	x_add
-000292 910f                      	pop t0
-000293 9508                      ret
+00025f 930f                      	push t0
+000260 9100 0105
+000262 7003
+000263 9503
+000264 3004
+000265 f409
+000266 e000
+000267 9110 0105
+000269 7f1c
+00026a 2b01
+00026b 9300 0105
+00026d e0a0
+00026e e0b1
+00026f 7010
+000270 0fa0
+000271 1fb1
+000272 910c
+000273 b905                      	x_add
+000274 910f                      	pop t0
+000275 9508                      ret
                                  yadd:
-000294 930f                      	push t0
-000295 9110 0105
-000297 7118
-000298 9513
-000299 3014
-00029a f409
-00029b e010
-00029c 9100 0105
-00029e 7e07
-00029f 2b10
-0002a0 9310 0105
-0002a2 e0c0
-0002a3 e0d1
-0002a4 7010
-0002a5 0fc1
-0002a6 1fd1
-0002a7 8108
-0002a8 9502
-0002a9 b905                      	y_add
-0002aa 910f                      	pop t0
-0002ab 9508                      ret
+000276 930f                      	push t0
+000277 9110 0105
+000279 7118
+00027a 9513
+00027b 3014
+00027c f409
+00027d e010
+00027e 9100 0105
+000280 7e07
+000281 2b10
+000282 9310 0105
+000284 e0c0
+000285 e0d1
+000286 7010
+000287 0fc1
+000288 1fd1
+000289 8108
+00028a 9502
+00028b b905                      	y_add
+00028c 910f                      	pop t0
+00028d 9508                      ret
                                  zadd:
-0002ac 930f                      	push t0
-0002ad 9120 0105
-0002af 7c20
-0002b0 9523
-0002b1 3024
-0002b2 f409
-0002b3 e020
-0002b4 9100 0105
-0002b6 730f
-0002b7 2b20
-0002b8 9320 0105
-0002ba e0e0
-0002bb e0f1
-0002bc 7010
-0002bd 0fe2
-0002be 1ff1
-0002bf 8100
-0002c0 9502
-0002c1 b908                      	z_add
-0002c2 910f                      	pop t0
-0002c3 9508                      ret
+00028e 930f                      	push t0
+00028f 9120 0105
+000291 7c20
+000292 9523
+000293 3024
+000294 f409
+000295 e020
+000296 9100 0105
+000298 730f
+000299 2b20
+00029a 9320 0105
+00029c e0e0
+00029d e0f1
+00029e 7010
+00029f 0fe2
+0002a0 1ff1
+0002a1 8100
+0002a2 9502
+0002a3 b908                      	z_add
+0002a4 910f                      	pop t0
+0002a5 9508                      ret
                                  xsub:
-0002c4 930f                      	push t0
-0002c5 9100 0105
-0002c7 7003
-0002c8 950a
-0002c9 3f0f
-0002ca f409
-0002cb e003
-0002cc 9110 0105
-0002ce 7f1c
-0002cf 2b01
-0002d0 9300 0105
-0002d2 e0a0
-0002d3 e0b1
-0002d4 7010
-0002d5 0fa0
-0002d6 1fb1
-0002d7 910c
-0002d8 b905                      	x_sub
-0002d9 910f                      	pop t0
-0002da 9508                      ret
+0002a6 930f                      	push t0
+0002a7 9100 0105
+0002a9 7003
+0002aa 950a
+0002ab 3f0f
+0002ac f409
+0002ad e003
+0002ae 9110 0105
+0002b0 7f1c
+0002b1 2b01
+0002b2 9300 0105
+0002b4 e0a0
+0002b5 e0b1
+0002b6 7010
+0002b7 0fa0
+0002b8 1fb1
+0002b9 910c
+0002ba b905                      	x_sub
+0002bb 910f                      	pop t0
+0002bc 9508                      ret
                                  ysub:
-0002db 930f                      	push t0
-0002dc 9110 0105
-0002de 7118
-0002df 951a
-0002e0 3f1f
-0002e1 f409
-0002e2 e013
-0002e3 9100 0105
-0002e5 7e07
-0002e6 2b10
-0002e7 9310 0105
-0002e9 e0c0
-0002ea e0d1
-0002eb 7010
-0002ec 0fc1
-0002ed 1fd1
-0002ee 8108
-0002ef 9502
-0002f0 b905                      	y_sub
-0002f1 910f                      	pop t0
-0002f2 9508                      ret
+0002bd 930f                      	push t0
+0002be 9110 0105
+0002c0 7118
+0002c1 951a
+0002c2 3f1f
+0002c3 f409
+0002c4 e013
+0002c5 9100 0105
+0002c7 7e07
+0002c8 2b10
+0002c9 9310 0105
+0002cb e0c0
+0002cc e0d1
+0002cd 7010
+0002ce 0fc1
+0002cf 1fd1
+0002d0 8108
+0002d1 9502
+0002d2 b905                      	y_sub
+0002d3 910f                      	pop t0
+0002d4 9508                      ret
                                  zsub:
-0002f3 930f                      	push t0
-0002f4 9120 0105
-0002f6 7c20
-0002f7 952a
-0002f8 3f2f
-0002f9 f409
-0002fa e023
-0002fb 9100 0105
-0002fd 730f
-0002fe 2b20
-0002ff 9320 0105
-000301 e0e0
-000302 e0f1
-000303 7010
-000304 0fe2
-000305 1ff1
-000306 8100
-000307 9502
-000308 b908                      	z_sub
-000309 910f                      	pop t0
+0002d5 930f                      	push t0
+0002d6 9120 0105
+0002d8 7c20
+0002d9 952a
+0002da 3f2f
+0002db f409
+0002dc e023
+0002dd 9100 0105
+0002df 730f
+0002e0 2b20
+0002e1 9320 0105
+0002e3 e0e0
+0002e4 e0f1
+0002e5 7010
+0002e6 0fe2
+0002e7 1ff1
+0002e8 8100
+0002e9 9502
+0002ea b908                      	z_sub
+0002eb 910f                      	pop t0
 
 
 RESOURCE USE INFORMATION
@@ -2380,39 +2339,39 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   2 y  :   2 z  :  13 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   3 y  :   2 z  :  10 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 293 r17: 127 r18:  54 r19:   0 r20:   0 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   4 r27:   4 r28:   4 
-r29:   4 r30:  33 r31:  33 
-Registers used: 12 out of 35 (34.3%)
+r13:   0 r14:   0 r15:   0 r16: 302 r17: 124 r18:  56 r19:   2 r20:   0 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   6 r27:   6 r28:   4 
+r29:   4 r30:  20 r31:  20 
+Registers used: 13 out of 35 (37.1%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   6 add   :   6 adiw  :   1 and   :   0 
-andi  :  12 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :  32 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  10 cbi   :   0 cbr   :   6 
+.lds  :   0 .sts  :   0 adc   :   7 add   :   7 adiw  :   1 and   :   0 
+andi  :  14 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   7 brge  :   1 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   1 
+brne  :  13 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :   6 cbi   :   0 cbr   :   7 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   1 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :  22 cpse  :   0 dec   :  18 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   4 jmp   :   0 
-ld    :   6 ldd   :   0 ldi   :  77 lds   :  31 lpm   :   2 lsl   :   0 
-lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   5 or    :   6 ori   :   0 out   :  12 pop   : 136 
-push  : 136 rcall :   0 ret   :  10 reti  :   0 rjmp  :  24 rol   :   0 
+cpi   :  19 cpse  :   0 dec   :   6 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   5 jmp   :   0 
+ld    :   7 ldd   :   0 ldi   :  62 lds   :  38 lpm   :   3 lsl   :   0 
+lsr   :   0 mov   :   1 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   0 or    :   7 ori   :   0 out   :  13 pop   : 130 
+push  : 130 rcall :   0 ret   :  10 reti  :   0 rjmp  :  31 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
-sbiw  :   6 sbr   :   0 sbrc  :   0 sbrs  :  18 sec   :   0 seh   :   0 
+sbiw  :   2 sbr   :   0 sbrc  :   0 sbrs  :  21 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   2 std   :   0 sts   :  33 
-sub   :   0 subi  :   0 swap  :   4 tst   :   0 wdr   :   0 
-Instructions used: 28 out of 113 (24.8%)
+sez   :   0 sleep :   0 spm   :   0 st    :   2 std   :   0 sts   :  36 
+sub   :   0 subi  :   2 swap  :   4 tst   :   0 wdr   :   0 
+Instructions used: 31 out of 113 (27.4%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000616   1408    150   1558   32768   4.8%
+[.cseg] 0x000000 0x0005da   1348    150   1498   32768   4.6%
 [.dseg] 0x000100 0x0001ce      0    206    206    2048  10.1%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
