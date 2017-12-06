@@ -10,17 +10,20 @@
 ;------------------------------------------------------------------
 .def t0 = r16
 .def t1 = r17
+.def t2 = r18
 ;------------------------------------------------------------------
-; save: Salva los registros temporales t0,t1
+; save: Salva los registros temporales t0,t1,t2
 ;------------------------------------------------------------------
 .macro	save
 	push t0
 	push t1
+	push t0
 .endm
 ;------------------------------------------------------------------
-; load: Recupera los registros temporales t0,t1
+; load: Recupera los registros temporales t0,t1,t2
 ;------------------------------------------------------------------
 .macro	load
+	pop t2
 	pop t1
 	pop t0
 .endm
@@ -59,6 +62,19 @@
 		ldi	t0,@1
 		mov	@0,t0
 	load
+.endm
+
+.macro addwi	;suma un inmediato a un word
+	ldi t0,@1
+	cbr t1,$FF
+	add @0L,@1
+	adc @0H,t1
+.endm
+
+.macro addwb	;suma un byte a un word
+	cbr t1,$FF
+	add @0L,@1
+	adc @0H,t1
 .endm
 
 .macro	addi	; carga registro con constante

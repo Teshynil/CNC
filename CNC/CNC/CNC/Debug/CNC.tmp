@@ -37,10 +37,15 @@
   <start><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>16</LINE></start>
   <clear><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>65</LINE></clear>
   <config_loop><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>32</LINE></config_loop>
+  <xadd><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>79</LINE></xadd>
+  <yadd><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>84</LINE></yadd>
+  <xsub><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>94</LINE></xsub>
+  <ysub><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>99</LINE></ysub>
   <loop><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>49</LINE></loop>
   <error><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>44</LINE></error>
   <println><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>60</LINE></println>
   <gets><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>57</LINE></gets>
-  <clear_loop><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>80</LINE></clear_loop>
+  <zadd><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>89</LINE></zadd>
+  <zsub><FILE>C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm</FILE><LINE>104</LINE></zsub>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff430000000a0000005d05000052030000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff430000000a0000005d05000052030000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
   <WINDOW type="default" module="ARES"/>
   <WINDOW type="VIEW3D" module="VIEW3D">
    <camera>
-    <position x="-2834551" y="-11552844" z="6027833"/>
-    <focus x="-2538812" y="-2331643" z="268335"/>
-    <up x="15615" y="529328" z="848279"/>
+    <position x="-2375000" y="-10194994" z="7690494"/>
+    <focus x="-2375000" y="-2504500" z="0"/>
+    <up x="0" y="707106" z="707106"/>
    </camera>
   </WINDOW>
  </FRAME>
@@ -69,7 +69,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="16" x="694" flags="0000000b" y="150" h="32" pid="7" iid="1">
+   <POPUP w="16" x="1088" flags="0000000b" y="379" h="32" pid="7" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -89,7 +89,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="16" x="20" flags="0000000b" y="419" h="32" pid="4" iid="1">
+   <POPUP w="16" x="1034" flags="0000000b" y="828" h="32" pid="4" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -109,7 +109,7 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="600" x="554" flags="0000002b" y="413" h="400" pid="1" iid="1">
+   <POPUP w="600" x="15" flags="0000802b" y="420" h="400" pid="1" iid="1">
     <PROPERTIES>
      <ITEM name="Breakpoint 0">"",0250,0000,92DC,6471,1
 </ITEM>

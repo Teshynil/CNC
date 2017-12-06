@@ -76,9 +76,33 @@ clear:
 		putci 'H'
 	load
 ret
-ldi t0,60
-		clear_loop:
-			call println
-			dec t0
-			cpi t0,0
-		brne clear_loop
+xadd:
+	push t0
+	x_add
+	pop t0
+ret
+yadd:
+	push t0
+	y_add
+	pop t0
+ret
+zadd:
+	push t0
+	z_add
+	pop t0
+ret
+xsub:
+	push t0
+	x_sub
+	pop t0
+ret
+ysub:
+	push t0
+	y_sub
+	pop t0
+ret
+zsub:
+	push t0
+	z_sub
+	pop t0
+ret

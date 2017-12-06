@@ -1,10 +1,16 @@
 
-AVRASM ver. 2.2.7  C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm Tue Dec 05 17:26:14 2017
+AVRASM ver. 2.2.7  C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm Tue Dec 05 21:12:26 2017
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
 C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
 C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(2): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\avrmacros.inc'
 C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc'
+C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc(6): warning: Register r16 already defined by the .DEF directive
+C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc' included form here
+C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc(7): warning: Register r17 already defined by the .DEF directive
+C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc' included form here
+C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc(8): warning: Register r18 already defined by the .DEF directive
+C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(3): 'C:\Users\Cisco\Documents\CNC\CNC\CNC\cncControl.inc' included form here
 C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(4): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\div.inc'
 C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco\Documents\CNC\CNC\CNC\serial.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m328pdef.inc'
@@ -1051,17 +1057,20 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  ;------------------------------------------------------------------
                                  .def t0 = r16
                                  .def t1 = r17
+                                 .def t2 = r18
                                  ;------------------------------------------------------------------
-                                 ; save: Salva los registros temporales t0,t1
+                                 ; save: Salva los registros temporales t0,t1,t2
                                  ;------------------------------------------------------------------
                                  .macro	save
                                  	push t0
                                  	push t1
+                                 	push t0
                                  .endm
                                  ;------------------------------------------------------------------
-                                 ; load: Recupera los registros temporales t0,t1
+                                 ; load: Recupera los registros temporales t0,t1,t2
                                  ;------------------------------------------------------------------
                                  .macro	load
+                                 	pop t2
                                  	pop t1
                                  	pop t0
                                  .endm
@@ -1100,6 +1109,19 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  		ldi	t0,@1
                                  		mov	@0,t0
                                  	load
+                                 .endm
+                                 
+                                 .macro addwi	;suma un inmediato a un word
+                                 	ldi t0,@1
+                                 	cbr t1,$FF
+                                 	add @0L,@1
+                                 	adc @0H,t1
+                                 .endm
+                                 
+                                 .macro addwb	;suma un byte a un word
+                                 	cbr t1,$FF
+                                 	add @0L,@1
+                                 	adc @0H,t1
                                  .endm
                                  
                                  .macro	addi	; carga registro con constante
@@ -1198,6 +1220,9 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
 000104                           stepSize:	.byte 1
 000105                           apos:		.byte 1
                                  .cseg
+                                 .def xi	= r16
+                                 .def yi	= r17
+                                 .def zi	= r18
                                  .def posx = r23
                                  .def posy = r24
                                  .def posz = r25
@@ -1211,13 +1236,34 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  	stsi dfase+2,0xa
                                  	stsi dfase+3,0x9
                                  	sts stepSize,@0
-                                 	ldiw X,dfase
+                                 	stsi apos,0x0
                                  .endm
                                  
                                  .macro cnctest
-                                 	cnctestloop:
-                                 		x_add
-                                 	brne cnctestloop
+                                 	ldi t0,50
+                                 	cnl1:
+                                 	call xadd
+                                 		dec t0
+                                 		delay 100
+                                 	brne cnl1
+                                 	ldi t0,50
+                                 	cnl2:
+                                 	call yadd
+                                 		dec t0
+                                 		delay 100
+                                 	brne cnl2
+                                 	ldi t0,50
+                                 	cnl3:
+                                 	call xsub
+                                 		dec t0
+                                 		delay 100
+                                 	brne cnl3
+                                 	ldi t0,50
+                                 	cnl4:
+                                 	call ysub
+                                 		dec t0
+                                 		delay 100
+                                 	brne cnl4
                                  .endm
                                  
                                  .macro parse
@@ -1229,33 +1275,109 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  .endm
                                  
                                  .macro x_add
-                                 	lds t0,apos
-                                 	andi t0,0x3
-                                 	x_loop:
-                                 		delay 250
-                                 		ldiw X,dfase
-                                 		add XL,t0
-                                 		cbr t1,$FF
-                                 		adc XH,t1
-                                 		ld t1,X
-                                 		out portb,t1
-                                 		inc t0
-                                 		cpi t0,4
-                                 		brne PC+2
-                                 		ldi	t0,0
-                                 	rjmp x_loop
+                                 	lds xi,apos
+                                 	andi xi,0x3; mascara de 2 bits para recuperar la posicion de rotacion en el array
+                                 	inc xi
+                                 	cpi xi,4
+                                 	brne PC+2
+                                 	ldi xi,0
+                                 	lds t1,apos
+                                 	andi t1,0xFC; mascara inversa para guardar
+                                 	or xi,t1
+                                 	sts apos,xi
+                                 	ldiw X, dfase
+                                 	addwb X,xi
+                                 	ld t0,X
+                                 	out portb,t0;UUUUXXXX
                                  .endm
                                  
                                  .macro x_sub
-                                 
+                                 	lds xi,apos
+                                 	andi xi,0x3; mascara de 2 bits para recuperar la posicion de rotacion en el array
+                                 	dec xi
+                                 	cpi xi,0xFF
+                                 	brne PC+2
+                                 	ldi xi,3
+                                 	lds t1,apos
+                                 	andi t1,0xFC; mascara inversa para guardar
+                                 	or xi,t1
+                                 	sts apos,xi
+                                 	ldiw X, dfase
+                                 	addwb X,xi
+                                 	ld t0,X
+                                 	out portb,t0;UUUUXXXX
                                  .endm
                                  
                                  .macro y_add
-                                 
+                                 	lds yi,apos
+                                 	andi yi,0x18; mascara de 2 bits para recuperar la posicion de rotacion en el array
+                                 	inc yi
+                                 	cpi yi,4
+                                 	brne PC+2
+                                 	ldi yi,0
+                                 	lds t0,apos
+                                 	andi t0,0xE7; mascara inversa para guardar
+                                 	or yi,t0
+                                 	sts apos,yi
+                                 	ldiw Y, dfase
+                                 	addwb Y,yi
+                                 	ld t0,Y
+                                 	swap t0
+                                 	out portb,t0;YYYYUUUU
                                  .endm
                                  
                                  .macro y_sub
+                                 	lds yi,apos
+                                 	andi yi,0x18; mascara de 2 bits para recuperar la posicion de rotacion en el array
+                                 	dec yi
+                                 	cpi yi,0xFF
+                                 	brne PC+2
+                                 	ldi yi,3
+                                 	lds t0,apos
+                                 	andi t0,0xE7; mascara inversa para guardar
+                                 	or yi,t0
+                                 	sts apos,yi
+                                 	ldiw Y, dfase
+                                 	addwb Y,yi
+                                 	ld t0,Y
+                                 	swap t0
+                                 	out portb,t0;YYYYUUUU
+                                 .endm
                                  
+                                 .macro z_add
+                                 	lds zi,apos
+                                 	andi zi,0xC0; mascara de 2 bits para recuperar la posicion de rotacion en el array
+                                 	inc zi
+                                 	cpi zi,4
+                                 	brne PC+2
+                                 	ldi zi,0
+                                 	lds t0,apos
+                                 	andi t0,0x3F; mascara inversa para guardar
+                                 	or zi,t0
+                                 	sts apos,zi
+                                 	ldiw Z, dfase
+                                 	addwb Z,zi
+                                 	ld t0,Z
+                                 	swap t0
+                                 	out portc,t0;UUUZZZZ
+                                 .endm
+                                 
+                                 .macro z_sub
+                                 	lds zi,apos
+                                 	andi zi,0xC0; mascara de 2 bits para recuperar la posicion de rotacion en el array
+                                 	dec zi
+                                 	cpi zi,0xFF
+                                 	brne PC+2
+                                 	ldi zi,3
+                                 	lds t0,apos
+                                 	andi t0,0x3F; mascara inversa para guardar
+                                 	or zi,t0
+                                 	sts apos,zi
+                                 	ldiw Z, dfase
+                                 	addwb Z,zi
+                                 	ld t0,Z
+                                 	swap t0
+                                 	out portc,t0;UUUZZZZ
                                  .endm
                                  .include "div.inc"			; division [No es totalmente mio]
                                  
@@ -1596,42 +1718,52 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  ;Inicializacion de puertos
 00004f 930f
 000050 931f
-000051 ef0f
-000052 b904
-000053 911f
-000054 910f                      	outi DDRB,0xFF
-000055 930f
-000056 931f
-000057 e00f
-000058 b907
-000059 911f
-00005a 910f                      	outi DDRC,0x0F
-00005b 930f
-00005c 931f
-00005d ef0f
-00005e b905
-00005f 911f
-000060 910f                      	outi PORTB,0xFF
+000051 930f
+000052 ef0f
+000053 b904
+000054 912f
+000055 911f
+000056 910f                      	outi DDRB,0xFF
+000057 930f
+000058 931f
+000059 930f
+00005a e00f
+00005b b907
+00005c 912f
+00005d 911f
+00005e 910f                      	outi DDRC,0x0F
+00005f 930f
+000060 931f
 000061 930f
-000062 931f
-000063 e00f
-000064 b908
+000062 ef0f
+000063 b905
+000064 912f
 000065 911f
-000066 910f                      	outi PORTC,0x0F
-                                 ;==========================================
+000066 910f                      	outi PORTB,0xFF
 000067 930f
 000068 931f
-000069 e010
-00006a e00c
-00006b 9310 00c5
-00006d 9300 00c4
-00006f e108
-000070 9300 00c1
-000072 e006
-000073 9300 00c2
-000075 911f
-000076 910f                      	initSerial
-000077 940e 0173                 	call clear
+000069 930f
+00006a e00f
+00006b b908
+00006c 912f
+00006d 911f
+00006e 910f                      	outi PORTC,0x0F
+                                 ;==========================================
+00006f 930f
+000070 931f
+000071 930f
+000072 e010
+000073 e00c
+000074 9310 00c5
+000076 9300 00c4
+000078 e108
+000079 9300 00c1
+00007b e006
+00007c 9300 00c2
+00007e 912f
+00007f 911f
+000080 910f                      	initSerial
+000081 940e 01f4                 	call clear
                                  config_loop:
                                  	/*puts msg_config,0
                                  	getn t0,1
@@ -1639,337 +1771,598 @@ C:\Users\Cisco\Documents\CNC\CNC\CNC\main.asm(5): Including file 'C:\Users\Cisco
                                  	breq error
                                  	cpi t0,9
                                  	breq error*/
-000079 930f
-00007a 931f
-00007b e005
-00007c 9300 0100
-00007e 911f
-00007f 910f
-000080 930f
-000081 931f
-000082 e006
-000083 9300 0101
-000085 911f
-000086 910f
-000087 930f
-000088 931f
-000089 e00a
-00008a 9300 0102
-00008c 911f
-00008d 910f
+000083 930f
+000084 931f
+000085 930f
+000086 e005
+000087 9300 0100
+000089 912f
+00008a 911f
+00008b 910f
+00008c 930f
+00008d 931f
 00008e 930f
-00008f 931f
-000090 e009
-000091 9300 0103
+00008f e006
+000090 9300 0101
+000092 912f
 000093 911f
 000094 910f
-000095 9300 0104
-000097 e0a0
-000098 e0b1                      	initCNC t0
-000099 9100 0105
-00009b 7003
-00009c 930f
-00009d 931f
-00009e 93ef
-00009f 93ff
-0000a0 efea
-0000a1 e0f0
-0000a2 e002
-0000a3 e41b
-0000a4 951a
-0000a5 f7f1
-0000a6 950a
-0000a7 f7e1
-0000a8 0000
-0000a9 9731
-0000aa 30e0
-0000ab f7b1
-0000ac 30f0
-0000ad f7a1
-0000ae 91ff
-0000af 91ef
+000095 930f
+000096 931f
+000097 930f
+000098 e00a
+000099 9300 0102
+00009b 912f
+00009c 911f
+00009d 910f
+00009e 930f
+00009f 931f
+0000a0 930f
+0000a1 e009
+0000a2 9300 0103
+0000a4 912f
+0000a5 911f
+0000a6 910f
+0000a7 9300 0104
+0000a9 930f
+0000aa 931f
+0000ab 930f
+0000ac e000
+0000ad 9300 0105
+0000af 912f
 0000b0 911f
-0000b1 910f
-0000b2 e0a0
-0000b3 e0b1
-0000b4 0fa0
-0000b5 7010
-0000b6 1fb1
-0000b7 911c
-0000b8 b915
-0000b9 9503
-0000ba 3004
-0000bb f409
-0000bc e000
-0000bd cfde
-0000be f6d1                      	cnctest
-0000bf 940e 0173                 	call clear
-0000c1 930f
-0000c2 931f
-0000c3 93ef
-0000c4 93ff
-0000c5 e5ee
-0000c6 e0f0
-0000c7 9105
-0000c8 3204
-0000c9 f059
-0000ca 930f
-0000cb 931f
-0000cc 9100 00c0
-0000ce ff05
-0000cf cffc
-0000d0 911f
-0000d1 910f
-0000d2 9300 00c6
-0000d4 cff2
-0000d5 91ff
-0000d6 91ef
-0000d7 911f
-0000d8 910f                      	puts msg_welcome,0
-0000d9 940e 00f6                 	call loop
+0000b1 910f                      	initCNC t0
+0000b2 e302
+0000b3 940e 027d
+0000b5 950a
+0000b6 930f
+0000b7 931f
+0000b8 930f
+0000b9 93ef
+0000ba 93ff
+0000bb e6e4
+0000bc e0f0
+0000bd e002
+0000be e41b
+0000bf 951a
+0000c0 f7f1
+0000c1 950a
+0000c2 f7e1
+0000c3 0000
+0000c4 9731
+0000c5 30e0
+0000c6 f7b1
+0000c7 30f0
+0000c8 f7a1
+0000c9 91ff
+0000ca 91ef
+0000cb 912f
+0000cc 911f
+0000cd 910f
+0000ce f721
+0000cf e302
+0000d0 940e 0294
+0000d2 950a
+0000d3 930f
+0000d4 931f
+0000d5 930f
+0000d6 93ef
+0000d7 93ff
+0000d8 e6e4
+0000d9 e0f0
+0000da e002
+0000db e41b
+0000dc 951a
+0000dd f7f1
+0000de 950a
+0000df f7e1
+0000e0 0000
+0000e1 9731
+0000e2 30e0
+0000e3 f7b1
+0000e4 30f0
+0000e5 f7a1
+0000e6 91ff
+0000e7 91ef
+0000e8 912f
+0000e9 911f
+0000ea 910f
+0000eb f721
+0000ec e302
+0000ed 940e 02c4
+0000ef 950a
+0000f0 930f
+0000f1 931f
+0000f2 930f
+0000f3 93ef
+0000f4 93ff
+0000f5 e6e4
+0000f6 e0f0
+0000f7 e002
+0000f8 e41b
+0000f9 951a
+0000fa f7f1
+0000fb 950a
+0000fc f7e1
+0000fd 0000
+0000fe 9731
+0000ff 30e0
+000100 f7b1
+000101 30f0
+000102 f7a1
+000103 91ff
+000104 91ef
+000105 912f
+000106 911f
+000107 910f
+000108 f721
+000109 e302
+00010a 940e 02db
+00010c 950a
+00010d 930f
+00010e 931f
+00010f 930f
+000110 93ef
+000111 93ff
+000112 e6e4
+000113 e0f0
+000114 e002
+000115 e41b
+000116 951a
+000117 f7f1
+000118 950a
+000119 f7e1
+00011a 0000
+00011b 9731
+00011c 30e0
+00011d f7b1
+00011e 30f0
+00011f f7a1
+000120 91ff
+000121 91ef
+000122 912f
+000123 911f
+000124 910f
+000125 f721                      	cnctest
+000126 940e 01f4                 	call clear
+000128 930f
+000129 931f
+00012a 930f
+00012b 93ef
+00012c 93ff
+00012d e5ee
+00012e e0f0
+00012f 9105
+000130 3204
+000131 f069
+000132 930f
+000133 931f
+000134 930f
+000135 9100 00c0
+000137 ff05
+000138 cffc
+000139 912f
+00013a 911f
+00013b 910f
+00013c 9300 00c6
+00013e cff0
+00013f 91ff
+000140 91ef
+000141 912f
+000142 911f
+000143 910f                      	puts msg_welcome,0
+000144 940e 0165                 	call loop
                                  error:
-0000db 940e 015c                 	call println
-0000dd 930f
-0000de 931f
-0000df 93ef
-0000e0 93ff
-0000e1 e3ec
-0000e2 e0f0
-0000e3 9105
-0000e4 3204
-0000e5 f059
-0000e6 930f
-0000e7 931f
-0000e8 9100 00c0
-0000ea ff05
-0000eb cffc
-0000ec 911f
-0000ed 910f
-0000ee 9300 00c6
-0000f0 cff2
-0000f1 91ff
-0000f2 91ef
-0000f3 911f
-0000f4 910f                      	puts msg_error_config,0
-0000f5 cf83                      	rjmp config_loop
+000146 940e 01d9                 	call println
+000148 930f
+000149 931f
+00014a 930f
+00014b 93ef
+00014c 93ff
+00014d e3ec
+00014e e0f0
+00014f 9105
+000150 3204
+000151 f069
+000152 930f
+000153 931f
+000154 930f
+000155 9100 00c0
+000157 ff05
+000158 cffc
+000159 912f
+00015a 911f
+00015b 910f
+00015c 9300 00c6
+00015e cff0
+00015f 91ff
+000160 91ef
+000161 912f
+000162 911f
+000163 910f                      	puts msg_error_config,0
+000164 cf1e                      	rjmp config_loop
                                  
                                  loop:
-0000f6 930f
-0000f7 931f
-0000f8 9100 00c0
-0000fa ff05
-0000fb cffc
-0000fc e30e
-0000fd 9300 00c6
-0000ff 911f
-000100 910f                      	putci '>'
-000101 940e 011d                 	call gets
-000103 940e 015c                 	call println
-000105 930f
-000106 931f
-000107 93ef
-000108 93ff
-000109 eee8
-00010a e0f3
-00010b e002
-00010c e41b
-00010d 951a
-00010e f7f1
-00010f 950a
-000110 f7e1
-000111 0000
-000112 9731
-000113 30e0
-000114 f7b1
-000115 30f0
-000116 f7a1
-000117 91ff
-000118 91ef
-000119 911f
-00011a 910f                      	delay 1000
-00011b cfda                      rjmp loop
-00011c 9508                      ret
+000165 930f
+000166 931f
+000167 930f
+000168 9100 00c0
+00016a ff05
+00016b cffc
+00016c e30e
+00016d 9300 00c6
+00016f 912f
+000170 911f
+000171 910f                      	putci '>'
+000172 940e 0190                 	call gets
+000174 940e 01d9                 	call println
+000176 930f
+000177 931f
+000178 930f
+000179 93ef
+00017a 93ff
+00017b eee8
+00017c e0f3
+00017d e002
+00017e e41b
+00017f 951a
+000180 f7f1
+000181 950a
+000182 f7e1
+000183 0000
+000184 9731
+000185 30e0
+000186 f7b1
+000187 30f0
+000188 f7a1
+000189 91ff
+00018a 91ef
+00018b 912f
+00018c 911f
+00018d 910f                      	delay 1000
+00018e cfd6                      rjmp loop
+00018f 9508                      ret
                                  
                                  gets:
-00011d 930f
-00011e 931f
-00011f 93ef
-000120 93ff
-000121 e0e6
-000122 e0f1
-000123 2711
-000124 930f
-000125 931f
-000126 9100 00c0
-000128 ff07
-000129 cffc
-00012a 911f
-00012b 910f
-00012c 9100 00c6
-00012e 300d
-00012f f109
-000130 3008
-000131 f479
-000132 3010
-000133 f381
-000134 951a
-000135 9731
-000136 930f
-000137 931f
-000138 9100 00c0
-00013a ff05
-00013b cffc
-00013c 911f
-00013d 910f
-00013e 9300 00c6
-000140 cfe3
-000141 930f
-000142 931f
-000143 9100 00c0
-000145 ff05
-000146 cffc
-000147 911f
-000148 910f
-000149 9300 00c6
-00014b 8300
-00014c 9513
-00014d 9631
-00014e 3613
-00014f f6a1
-000150 c000
-000151 930f
-000152 931f
-000153 e204
-000154 8300
-000155 911f
-000156 910f
-000157 91ff
-000158 91ef
-000159 911f
-00015a 910f                      	fgets
-00015b 9508                      ret
-                                 println:
-00015c 930f
-00015d 931f
-00015e 9100 00c0
-000160 ff05
-000161 cffc
-000162 e00d
-000163 9300 00c6
-000165 911f
-000166 910f                      	putci 13
-000167 930f
-000168 931f
-000169 9100 00c0
-00016b ff05
-00016c cffc
-00016d e00a
-00016e 9300 00c6
-000170 911f
-000171 910f                      	putci 10
-000172 9508                      ret
-                                  
-                                 clear:
-000173 930f
-000174 931f                      	save
-000175 930f
-000176 931f
-000177 9100 00c0
-000179 ff05
-00017a cffc
-00017b e10b
-00017c 9300 00c6
-00017e 911f
-00017f 910f                      		putci 033
-000180 930f
-000181 931f
-000182 9100 00c0
-000184 ff05
-000185 cffc
-000186 e50b
-000187 9300 00c6
-000189 911f
-00018a 910f                      		putci '['
-00018b 930f
-00018c 931f
-00018d 9100 00c0
-00018f ff05
-000190 cffc
-000191 e302
-000192 9300 00c6
-000194 911f
-000195 910f                      		putci '2'
-000196 930f
-000197 931f
-000198 9100 00c0
-00019a ff05
-00019b cffc
-00019c e40a
-00019d 9300 00c6
-00019f 911f
-0001a0 910f                      		putci 'J'
-0001a1 930f
-0001a2 931f
-0001a3 9100 00c0
-0001a5 ff05
-0001a6 cffc
-0001a7 e10b
-0001a8 9300 00c6
-0001aa 911f
-0001ab 910f                      		putci 033
+000190 930f
+000191 931f
+000192 930f
+000193 93ef
+000194 93ff
+000195 e0e6
+000196 e0f1
+000197 2711
+000198 930f
+000199 931f
+00019a 930f
+00019b 9100 00c0
+00019d ff07
+00019e cffc
+00019f 912f
+0001a0 911f
+0001a1 910f
+0001a2 9100 00c6
+0001a4 300d
+0001a5 f129
+0001a6 3008
+0001a7 f489
+0001a8 3010
+0001a9 f371
+0001aa 951a
+0001ab 9731
 0001ac 930f
 0001ad 931f
-0001ae 9100 00c0
-0001b0 ff05
-0001b1 cffc
-0001b2 e50b
-0001b3 9300 00c6
-0001b5 911f
-0001b6 910f                      		putci '['
-0001b7 930f
-0001b8 931f
-0001b9 9100 00c0
-0001bb ff05
-0001bc cffc
-0001bd e300
-0001be 9300 00c6
-0001c0 911f
-0001c1 910f                      		putci '0'
-0001c2 930f
-0001c3 931f
-0001c4 9100 00c0
-0001c6 ff05
-0001c7 cffc
-0001c8 e30b
-0001c9 9300 00c6
-0001cb 911f
-0001cc 910f                      		putci ';'
+0001ae 930f
+0001af 9100 00c0
+0001b1 ff05
+0001b2 cffc
+0001b3 912f
+0001b4 911f
+0001b5 910f
+0001b6 9300 00c6
+0001b8 cfdf
+0001b9 930f
+0001ba 931f
+0001bb 930f
+0001bc 9100 00c0
+0001be ff05
+0001bf cffc
+0001c0 912f
+0001c1 911f
+0001c2 910f
+0001c3 9300 00c6
+0001c5 8300
+0001c6 9513
+0001c7 9631
+0001c8 3613
+0001c9 f671
+0001ca c000
+0001cb 930f
+0001cc 931f
 0001cd 930f
-0001ce 931f
-0001cf 9100 00c0
-0001d1 ff05
-0001d2 cffc
-0001d3 e300
-0001d4 9300 00c6
+0001ce e204
+0001cf 8300
+0001d0 912f
+0001d1 911f
+0001d2 910f
+0001d3 91ff
+0001d4 91ef
+0001d5 912f
 0001d6 911f
-0001d7 910f                      		putci '0'
-0001d8 930f
-0001d9 931f
-0001da 9100 00c0
-0001dc ff05
-0001dd cffc
-0001de e408
-0001df 9300 00c6
-0001e1 911f
-0001e2 910f                      		putci 'H'
-0001e3 911f
-0001e4 910f                      	load
-0001e5 9508                      ret
-0001e6 e30c                      ldi t0,60
-                                 		clear_loop:
-0001e7 940e 015c                 			call println
-0001e9 950a                      			dec t0
-0001ea 3000                      			cpi t0,0
+0001d7 910f                      	fgets
+0001d8 9508                      ret
+                                 println:
+0001d9 930f
+0001da 931f
+0001db 930f
+0001dc 9100 00c0
+0001de ff05
+0001df cffc
+0001e0 e00d
+0001e1 9300 00c6
+0001e3 912f
+0001e4 911f
+0001e5 910f                      	putci 13
+0001e6 930f
+0001e7 931f
+0001e8 930f
+0001e9 9100 00c0
+0001eb ff05
+0001ec cffc
+0001ed e00a
+0001ee 9300 00c6
+0001f0 912f
+0001f1 911f
+0001f2 910f                      	putci 10
+0001f3 9508                      ret
+                                  
+                                 clear:
+0001f4 930f
+0001f5 931f
+0001f6 930f                      	save
+0001f7 930f
+0001f8 931f
+0001f9 930f
+0001fa 9100 00c0
+0001fc ff05
+0001fd cffc
+0001fe e10b
+0001ff 9300 00c6
+000201 912f
+000202 911f
+000203 910f                      		putci 033
+000204 930f
+000205 931f
+000206 930f
+000207 9100 00c0
+000209 ff05
+00020a cffc
+00020b e50b
+00020c 9300 00c6
+00020e 912f
+00020f 911f
+000210 910f                      		putci '['
+000211 930f
+000212 931f
+000213 930f
+000214 9100 00c0
+000216 ff05
+000217 cffc
+000218 e302
+000219 9300 00c6
+00021b 912f
+00021c 911f
+00021d 910f                      		putci '2'
+00021e 930f
+00021f 931f
+000220 930f
+000221 9100 00c0
+000223 ff05
+000224 cffc
+000225 e40a
+000226 9300 00c6
+000228 912f
+000229 911f
+00022a 910f                      		putci 'J'
+00022b 930f
+00022c 931f
+00022d 930f
+00022e 9100 00c0
+000230 ff05
+000231 cffc
+000232 e10b
+000233 9300 00c6
+000235 912f
+000236 911f
+000237 910f                      		putci 033
+000238 930f
+000239 931f
+00023a 930f
+00023b 9100 00c0
+00023d ff05
+00023e cffc
+00023f e50b
+000240 9300 00c6
+000242 912f
+000243 911f
+000244 910f                      		putci '['
+000245 930f
+000246 931f
+000247 930f
+000248 9100 00c0
+00024a ff05
+00024b cffc
+00024c e300
+00024d 9300 00c6
+00024f 912f
+000250 911f
+000251 910f                      		putci '0'
+000252 930f
+000253 931f
+000254 930f
+000255 9100 00c0
+000257 ff05
+000258 cffc
+000259 e30b
+00025a 9300 00c6
+00025c 912f
+00025d 911f
+00025e 910f                      		putci ';'
+00025f 930f
+000260 931f
+000261 930f
+000262 9100 00c0
+000264 ff05
+000265 cffc
+000266 e300
+000267 9300 00c6
+000269 912f
+00026a 911f
+00026b 910f                      		putci '0'
+00026c 930f
+00026d 931f
+00026e 930f
+00026f 9100 00c0
+000271 ff05
+000272 cffc
+000273 e408
+000274 9300 00c6
+000276 912f
+000277 911f
+000278 910f                      		putci 'H'
+000279 912f
+00027a 911f
+00027b 910f                      	load
+00027c 9508                      ret
+                                 xadd:
+00027d 930f                      	push t0
+00027e 9100 0105
+000280 7003
+000281 9503
+000282 3004
+000283 f409
+000284 e000
+000285 9110 0105
+000287 7f1c
+000288 2b01
+000289 9300 0105
+00028b e0a0
+00028c e0b1
+00028d 7010
+00028e 0fa0
+00028f 1fb1
+000290 910c
+000291 b905                      	x_add
+000292 910f                      	pop t0
+000293 9508                      ret
+                                 yadd:
+000294 930f                      	push t0
+000295 9110 0105
+000297 7118
+000298 9513
+000299 3014
+00029a f409
+00029b e010
+00029c 9100 0105
+00029e 7e07
+00029f 2b10
+0002a0 9310 0105
+0002a2 e0c0
+0002a3 e0d1
+0002a4 7010
+0002a5 0fc1
+0002a6 1fd1
+0002a7 8108
+0002a8 9502
+0002a9 b905                      	y_add
+0002aa 910f                      	pop t0
+0002ab 9508                      ret
+                                 zadd:
+0002ac 930f                      	push t0
+0002ad 9120 0105
+0002af 7c20
+0002b0 9523
+0002b1 3024
+0002b2 f409
+0002b3 e020
+0002b4 9100 0105
+0002b6 730f
+0002b7 2b20
+0002b8 9320 0105
+0002ba e0e0
+0002bb e0f1
+0002bc 7010
+0002bd 0fe2
+0002be 1ff1
+0002bf 8100
+0002c0 9502
+0002c1 b908                      	z_add
+0002c2 910f                      	pop t0
+0002c3 9508                      ret
+                                 xsub:
+0002c4 930f                      	push t0
+0002c5 9100 0105
+0002c7 7003
+0002c8 950a
+0002c9 3f0f
+0002ca f409
+0002cb e003
+0002cc 9110 0105
+0002ce 7f1c
+0002cf 2b01
+0002d0 9300 0105
+0002d2 e0a0
+0002d3 e0b1
+0002d4 7010
+0002d5 0fa0
+0002d6 1fb1
+0002d7 910c
+0002d8 b905                      	x_sub
+0002d9 910f                      	pop t0
+0002da 9508                      ret
+                                 ysub:
+0002db 930f                      	push t0
+0002dc 9110 0105
+0002de 7118
+0002df 951a
+0002e0 3f1f
+0002e1 f409
+0002e2 e013
+0002e3 9100 0105
+0002e5 7e07
+0002e6 2b10
+0002e7 9310 0105
+0002e9 e0c0
+0002ea e0d1
+0002eb 7010
+0002ec 0fc1
+0002ed 1fd1
+0002ee 8108
+0002ef 9502
+0002f0 b905                      	y_sub
+0002f1 910f                      	pop t0
+0002f2 9508                      ret
+                                 zsub:
+0002f3 930f                      	push t0
+0002f4 9120 0105
+0002f6 7c20
+0002f7 952a
+0002f8 3f2f
+0002f9 f409
+0002fa e023
+0002fb 9100 0105
+0002fd 730f
+0002fe 2b20
+0002ff 9320 0105
+000301 e0e0
+000302 e0f1
+000303 7010
+000304 0fe2
+000305 1ff1
+000306 8100
+000307 9502
+000308 b908                      	z_sub
+000309 910f                      	pop t0
 
 
 RESOURCE USE INFORMATION
@@ -1987,40 +2380,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   1 y  :   0 z  :   8 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   2 y  :   2 z  :  13 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 184 r17:  83 r18:   0 r19:   0 r20:   0 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   3 r27:   3 r28:   0 
-r29:   0 r30:  17 r31:  17 
-Registers used: 8 out of 35 (22.9%)
+r13:   0 r14:   0 r15:   0 r16: 293 r17: 127 r18:  54 r19:   0 r20:   0 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   4 r27:   4 r28:   4 
+r29:   4 r30:  33 r31:  33 
+Registers used: 12 out of 35 (34.3%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   1 add   :   1 adiw  :   1 and   :   0 
-andi  :   1 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+.lds  :   0 .sts  :   0 adc   :   6 add   :   6 adiw  :   1 and   :   0 
+andi  :  12 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :  13 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :   7 cbi   :   0 cbr   :   1 
+brne  :  32 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  10 cbi   :   0 cbr   :   6 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   1 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :  12 cpse  :   0 dec   :   6 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   2 jmp   :   0 
-ld    :   1 ldd   :   0 ldi   :  48 lds   :  20 lpm   :   2 lsl   :   0 
+cpi   :  22 cpse  :   0 dec   :  18 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   4 jmp   :   0 
+ld    :   6 ldd   :   0 ldi   :  77 lds   :  31 lpm   :   2 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   2 or    :   0 ori   :   0 out   :   7 pop   :  78 
-push  :  78 rcall :   0 ret   :   4 reti  :   0 rjmp  :  25 rol   :   0 
+neg   :   0 nop   :   5 or    :   6 ori   :   0 out   :  12 pop   : 136 
+push  : 136 rcall :   0 ret   :  10 reti  :   0 rjmp  :  24 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
-sbiw  :   3 sbr   :   0 sbrc  :   0 sbrs  :  18 sec   :   0 seh   :   0 
+sbiw  :   6 sbr   :   0 sbrc  :   0 sbrs  :  18 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   2 std   :   0 sts   :  26 
-sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 26 out of 113 (23.0%)
+sez   :   0 sleep :   0 spm   :   0 st    :   2 std   :   0 sts   :  33 
+sub   :   0 subi  :   0 swap  :   4 tst   :   0 wdr   :   0 
+Instructions used: 28 out of 113 (24.8%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0003d8    834    150    984   32768   3.0%
+[.cseg] 0x000000 0x000616   1408    150   1558   32768   4.8%
 [.dseg] 0x000100 0x0001ce      0    206    206    2048  10.1%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
-Assembly complete, 0 errors, 0 warnings
+Assembly complete, 0 errors, 3 warnings
