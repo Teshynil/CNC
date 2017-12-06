@@ -1,0 +1,409 @@
+ (routes 
+  (resolution mm 100000)
+  (parser
+  )
+  (parser
+  )
+  (structure_out
+   (layer TOP (type signal)
+   )
+   (layer I1 (type signal)
+   )
+   (layer I2 (type signal)
+   )
+   (layer I3 (type signal)
+   )
+   (layer I4 (type signal)
+   )
+   (layer I5 (type signal)
+   )
+   (layer I6 (type signal)
+   )
+   (layer I7 (type signal)
+   )
+   (layer I8 (type signal)
+   )
+   (layer I9 (type signal)
+   )
+   (layer I10 (type signal)
+   )
+   (layer I11 (type signal)
+   )
+   (layer I12 (type signal)
+   )
+   (layer I13 (type signal)
+   )
+   (layer I14 (type signal)
+   )
+   (layer BOT (type signal)
+   )
+  )
+  (library_out
+  (padstack $VIA#0_SIGNAL
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  (padstack $VIA#0_POWER
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  )
+  (network_out
+   (Net 12VCC 
+   (rule
+   )
+   (wire (path BOT 50800  -762000 -5651500 -508000 -5651500 -508000 -5778500
+     -5651500 -5778500 -5651500 -3683000 -2921000 -3683000 -2921000 -1778000
+     -2540000 -1778000)
+    (connect (terminal wire) (terminal pin XDRIVER-7))
+   )
+   (wire (path BOT 50800  -762000 -5524500 1778000 -5524500 1778000 -5080000)
+    (connect (terminal wire) (terminal pin ZDRIVER-7))
+   )
+   (wire (path BOT 50800  -762000 -5524500 -762000 -5651500)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  2540000 -5080000 1778000 -5080000)
+    (connect (terminal pin POWER12V-0) (terminal pin ZDRIVER-7))
+   )
+   (wire (path BOT 50800  -762000 -5080000 -762000 -5524500)
+    (connect (terminal pin YDRIVER-7) (terminal wire))
+   )
+   )
+   (Net GND 
+   (rule
+   )
+   (wire (path BOT 50800  381000 -4445000 381000 -3175000 -635000 -3175000
+     -635000 -3429000 -889000 -3429000 -889000 -2794000 254000 -2794000
+     254000 -396240)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  254000 -396240 0 -396240)
+    (connect (terminal wire) (terminal pin POWER-1))
+   )
+   (wire (path BOT 50800  -1524000 -4191000 -1143000 -4191000 -1143000 -4572000
+     -508000 -4572000 -508000 -5207000 381000 -5207000 381000 -4953000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  762000 -4445000 381000 -4445000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  762000 -5080000 1016000 -5080000)
+    (connect (terminal pin ZDRIVER-3) (terminal pin ZDRIVER-4))
+   )
+   (wire (path BOT 50800  381000 -4445000 381000 -4953000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  762000 -4953000 381000 -4953000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  1016000 -4318000 1016000 -4445000 762000 -4445000)
+    (connect (terminal pin ZDRIVER-11) (terminal wire))
+   )
+   (wire (path BOT 50800  762000 -4445000 762000 -4318000)
+    (connect (terminal wire) (terminal pin ZDRIVER-12))
+   )
+   (wire (path BOT 50800  762000 -5080000 762000 -4953000)
+    (connect (terminal pin ZDRIVER-3) (terminal wire))
+   )
+   (wire (path BOT 50800  508000 -381000 2921000 -381000 2921000 -4191000
+     2540000 -4191000 2540000 -4683760)
+    (connect (terminal wire) (terminal pin POWER12V-1))
+   )
+   (wire (path BOT 50800  508000 -381000 508000 381000 -1905000 381000
+     -1905000 -381000 -1651000 -381000 -1651000 -762000 -1778000 -762000)
+    (connect (terminal wire) (terminal pin XDRIVER-12))
+   )
+   (wire (path BOT 50800  -1651000 -3302000 -1651000 -3175000 -1778000 -3175000
+     -1778000 -2540000)
+    (connect (terminal wire) (terminal pin ATMEGA-7))
+   )
+   (wire (path BOT 50800  508000 -381000 254000 -381000 254000 -396240)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  -1524000 -4191000 -1524000 -3302000)
+    (connect (terminal wire) (terminal pin ATMEGA-21))
+   )
+   (wire (path BOT 50800  -1524000 -4191000 -1524000 -4318000)
+    (connect (terminal wire) (terminal pin YDRIVER-11))
+   )
+   (wire (path BOT 50800  -1778000 -1016000 -2540000 -1016000)
+    (connect (terminal pin XDRIVER-11) (terminal pin XDRIVER-4))
+   )
+   (wire (path BOT 50800  -1524000 -4318000 -1524000 -5080000)
+    (connect (terminal pin YDRIVER-11) (terminal pin YDRIVER-4))
+   )
+   (wire (path BOT 50800  -1778000 -1016000 -1778000 -762000)
+    (connect (terminal pin XDRIVER-11) (terminal pin XDRIVER-12))
+   )
+   (wire (path BOT 50800  -1524000 -5080000 -1778000 -5080000)
+    (connect (terminal pin YDRIVER-4) (terminal pin YDRIVER-3))
+   )
+   (wire (path BOT 50800  -2540000 -1016000 -2540000 -762000)
+    (connect (terminal pin XDRIVER-4) (terminal pin XDRIVER-3))
+   )
+   (wire (path BOT 50800  -1524000 -4318000 -1651000 -4318000)
+    (connect (terminal pin YDRIVER-11) (terminal wire))
+   )
+   (wire (path BOT 50800  -1778000 -4318000 -1651000 -4318000)
+    (connect (terminal pin YDRIVER-12) (terminal wire))
+   )
+   (wire (path BOT 50800  -1524000 -3302000 -1651000 -3302000)
+    (connect (terminal pin ATMEGA-21) (terminal wire))
+   )
+   )
+   (Net IX1 
+   (rule
+   )
+   (wire (path BOT 50800  -3302000 -2540000 -5397500 -2540000 -5397500 444500
+     -2868019 444500 -2868019 -254000 -2540000 -254000)
+    (connect (terminal pin ATMEGA-13) (terminal pin XDRIVER-1))
+   )
+   )
+   (Net IX2 
+   (rule
+   )
+   (wire (path BOT 50800  -3302000 -3302000 -3302000 -2921000 -3175000 -2921000
+     -3175000 -1524000 -2540000 -1524000)
+    (connect (terminal pin ATMEGA-14) (terminal pin XDRIVER-6))
+   )
+   )
+   (Net IX3 
+   (rule
+   )
+   (wire (path BOT 50800  -3048000 -3302000 -3048000 -3429000 -5588000 -3429000
+     -5588000 571500 -2286000 571500 -2286000 -381000 -3354196 -381000
+     -3354196 317500 -5270500 317500 -5270500 -1397000 -2159000 -1397000
+     -2159000 -1524000 -1778000 -1524000)
+    (connect (terminal pin ATMEGA-15) (terminal pin XDRIVER-9))
+   )
+   )
+   (Net IX4 
+   (rule
+   )
+   (wire (path BOT 50800  -2794000 -3302000 -2794000 -2921000 -2667000 -2921000
+     -2667000 -2159000 -1524000 -2159000 -1524000 -254000 -1778000 -254000)
+    (connect (terminal pin ATMEGA-16) (terminal pin XDRIVER-14))
+   )
+   )
+   (Net IY1 
+   (rule
+   )
+   (wire (path BOT 50800  -2540000 -3302000 -2540000 -4191000 -2413000 -4191000
+     -2413000 -4699000 -2286000 -4699000 -2286000 -5080000)
+    (connect (terminal pin ATMEGA-17) (terminal pin YDRIVER-1))
+   )
+   )
+   (Net IY2 
+   (rule
+   )
+   (wire (path BOT 50800  -2286000 -3302000 -2286000 -3556000 -1905000 -3556000
+     -1905000 -5270500 -1397000 -5270500 -1397000 -4953000 -1016000 -4953000
+     -1016000 -5080000)
+    (connect (terminal pin ATMEGA-18) (terminal pin YDRIVER-6))
+   )
+   )
+   (Net IY3 
+   (rule
+   )
+   (wire (path BOT 50800  -1016000 -4318000 -1016000 -4064000 -1397000 -4064000
+     -1397000 -2794000 -1651000 -2794000 -1651000 -2413000 -2032000 -2413000
+     -2032000 -2540000)
+    (connect (terminal pin YDRIVER-9) (terminal pin ATMEGA-8))
+   )
+   )
+   (Net IY4 
+   (rule
+   )
+   (wire (path BOT 50800  -2286000 -4318000 -2286000 -4064000 -2413000 -4064000
+     -2413000 -3175000 -2286000 -3175000 -2286000 -2540000)
+    (connect (terminal pin YDRIVER-14) (terminal pin ATMEGA-9))
+   )
+   )
+   (Net IZ1 
+   (rule
+   )
+   (wire (path BOT 50800  254000 -5080000 254000 -4953000 -254000 -4953000
+     -254000 -3937000 -1270000 -3937000 -1270000 -3302000)
+    (connect (terminal pin ZDRIVER-1) (terminal pin ATMEGA-22))
+   )
+   )
+   (Net IZ2 
+   (rule
+   )
+   (wire (path BOT 50800  1524000 -5080000 1524000 -5270500 1143000 -5270500
+     1143000 -4826000 127000 -4826000 127000 -3683000 -1016000 -3683000
+     -1016000 -3302000)
+    (connect (terminal pin ZDRIVER-6) (terminal pin ATMEGA-23))
+   )
+   )
+   (Net IZ3 
+   (rule
+   )
+   (wire (path BOT 50800  1524000 -4318000 1524000 -3048000 -762000 -3048000
+     -762000 -3302000)
+    (connect (terminal pin ZDRIVER-9) (terminal pin ATMEGA-24))
+   )
+   )
+   (Net IZ4 
+   (rule
+   )
+   (wire (path BOT 50800  -508000 -3302000 -508000 -3492500 254000 -3492500
+     254000 -4318000)
+    (connect (terminal pin ATMEGA-25) (terminal pin ZDRIVER-14))
+   )
+   )
+   (Net VCC/VDD 
+   (rule
+   )
+   (wire (path BOT 50800  0 -4318000 0 -3810000 -1143000 -3810000
+     -1143000 -2413000)
+    (connect (terminal pin ZDRIVER-15) (terminal wire))
+   )
+   (wire (path BOT 50800  -1524000 -2413000 -1524000 -2286000 -2413000 -2286000
+     -2413000 -3048000 -2667000 -3048000 -2667000 -4318000 -2540000 -4318000)
+    (connect (terminal wire) (terminal pin YDRIVER-15))
+   )
+   (wire (path BOT 50800  -1143000 0 -1143000 -2413000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  -1143000 0 0 0)
+    (connect (terminal wire) (terminal pin POWER-0))
+   )
+   (wire (path BOT 50800  -1143000 -2413000 -1524000 -2413000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 50800  -1778000 0 -1143000 0)
+    (connect (terminal pin XDRIVER-15) (terminal wire))
+   )
+   (wire (path BOT 50800  -1524000 -2540000 -1524000 -2413000)
+    (connect (terminal pin ATMEGA-6) (terminal wire))
+   )
+   )
+   (Net X1 
+   (rule
+   )
+   (wire (path BOT 50800  -2540000 -508000 -3619500 -508000 -3619500 190500
+     -5080000 190500 -5080000 0)
+    (connect (terminal pin XDRIVER-2) (terminal pin CNCX-0))
+   )
+   )
+   (Net X2 
+   (rule
+   )
+   (wire (path BOT 50800  -4826000 0 -4826000 -1270000 -2540000 -1270000)
+    (connect (terminal pin CNCX-1) (terminal pin XDRIVER-5))
+   )
+   )
+   (Net X3 
+   (rule
+   )
+   (wire (path BOT 50800  -1778000 -1270000 -2159000 -1270000 -2159000 -1143000
+     -4572000 -1143000 -4572000 0)
+    (connect (terminal pin XDRIVER-10) (terminal pin CNCX-2))
+   )
+   )
+   (Net X4 
+   (rule
+   )
+   (wire (path BOT 50800  -4318000 0 -3873500 0 -3873500 -635000
+     -2159000 -635000 -2159000 -508000 -1778000 -508000)
+    (connect (terminal pin CNCX-3) (terminal pin XDRIVER-13))
+   )
+   )
+   (Net Y1 
+   (rule
+   )
+   (wire (path BOT 50800  -2032000 -5080000 -2032000 -5397500 -4635500 -5397500
+     -4635500 -5080000 -5080000 -5080000)
+    (connect (terminal pin YDRIVER-2) (terminal pin CNCY-0))
+   )
+   )
+   (Net Y2 
+   (rule
+   )
+   (wire (path BOT 50800  -5080000 -4826000 -5270500 -4826000 -5270500 -5524500
+     -1270000 -5524500 -1270000 -5080000)
+    (connect (terminal pin CNCY-1) (terminal pin YDRIVER-5))
+   )
+   )
+   (Net Y3 
+   (rule
+   )
+   (wire (path BOT 50800  -1270000 -4318000 -1270000 -4826000 -889000 -4826000
+     -889000 -5651500 -5397500 -5651500 -5397500 -4572000 -5080000 -4572000)
+    (connect (terminal pin YDRIVER-10) (terminal pin CNCY-2))
+   )
+   )
+   (Net Y4 
+   (rule
+   )
+   (wire (path BOT 50800  -2032000 -4318000 -2032000 -4699000 -2159000 -4699000
+     -2159000 -5270500 -3295861 -5270500 -3295861 -4318000 -5080000 -4318000)
+    (connect (terminal pin YDRIVER-13) (terminal pin CNCY-3))
+   )
+   )
+   (Net Z1 
+   (rule
+   )
+   (wire (path BOT 50800  2540000 -2540000 2540000 -3111500 2286000 -3111500
+     2286000 -4953000 1651000 -4953000 1651000 -5397500 508000 -5397500
+     508000 -5080000)
+    (connect (terminal pin CNCZ-0) (terminal pin ZDRIVER-2))
+   )
+   )
+   (Net Z2 
+   (rule
+   )
+   (wire (path BOT 50800  1270000 -5080000 1270000 -4826000 2159000 -4826000
+     2159000 -2866437 2286000 -2866437 2286000 -2540000)
+    (connect (terminal pin ZDRIVER-5) (terminal pin CNCZ-1))
+   )
+   )
+   (Net Z3 
+   (rule
+   )
+   (wire (path BOT 50800  2032000 -2540000 2032000 -4572000 1270000 -4572000
+     1270000 -4318000)
+    (connect (terminal pin CNCZ-2) (terminal pin ZDRIVER-10))
+   )
+   )
+   (Net Z4 
+   (rule
+   )
+   (wire (path BOT 50800  508000 -4318000 508000 -4064000 1397000 -4064000
+     1397000 -4445000 1651000 -4445000 1651000 -2984500 1778000 -2984500
+     1778000 -2540000)
+    (connect (terminal pin ZDRIVER-13) (terminal pin CNCZ-3))
+   )
+   )
+  )
+ )
