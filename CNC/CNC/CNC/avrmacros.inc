@@ -17,7 +17,7 @@
 .macro	save
 	push t0
 	push t1
-	push t0
+	push t2
 .endm
 ;------------------------------------------------------------------
 ; load: Recupera los registros temporales t0,t1,t2
@@ -72,9 +72,11 @@
 .endm
 
 .macro addwb	;suma un byte a un word
-	cbr t1,$FF
+	push t1
 	add @0L,@1
+	cbr t1,$FF
 	adc @0H,t1
+	pop t1
 .endm
 
 .macro	addi	; carga registro con constante

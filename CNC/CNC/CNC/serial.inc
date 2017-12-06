@@ -2,7 +2,6 @@
 inbuf: .byte 100
 outbuf: .byte 100
 .cseg
-.def eflag=r15;echo flag=r15
 ;------------------------------------------------------------------
 ; initSerial: Inicializa el serial
 ;------------------------------------------------------------------
@@ -12,15 +11,19 @@ outbuf: .byte 100
 		ldi t0, low(fosc/(16*baud)-1)
 		output UBRR0H, t1
 		output UBRR0L, t0 
-		; Enable receiver and transmitter
+		;habilitar rx y tx
 		ldi t0, (1<<RXEN0)|(1<<TXEN0) 
 		output UCSR0B,t0
-		; Set frame format: 8data, 1stop bit 
-		ldi t0, (0<<USBS0)|(3<<UCSZ00) 
+		;formato: 8data, 1stop bit 
+		ldi t0, (1<<UCSZ01) | (1<<UCSZ00) 
 		output UCSR0C,t0
 	load
 .endm
-
+.macro testSerial
+	testSerialloop:
+	putci 0
+	rjmp testSerialloop
+.endm
 ;------------------------------------------------------------------
 ; getc: Obtiene un caracter desde serial
 ;------------------------------------------------------------------

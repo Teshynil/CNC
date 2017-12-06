@@ -2,14 +2,12 @@
 .include "avrmacros.inc"	; macros
 .include "cncControl.inc"	; manejo de la cnc
 .include "div.inc"			; division [No es totalmente mio]
-.include "serial.inc"		; manejo de la conexion serial
+.include "serialfake.inc"			; division [No es totalmente mio]
 ;recordatorio t0,t1 es temporal r16,r17
 ;==========================================
 ;Inicializacion de variables
 .cseg
-msg_config: .db "Inserta la cantidad de pasos que representa un punto(1-8): ",'$'
-msg_error_config: .db "Valor invalido intenta otra vez",13,10,'$'
-msg_welcome: .db "Inserte su codigo G debe finalizar con el codigo M00:",13,10,'$'
+GCODE: .db "G00 X0 Y0 Z5",10,"G00 X6 Y6",10,"G01 Z-5",10,"G01 X39 Y6",10,"G01 X39 Y16",10,"G01 X27 Y16",10,"G01 X35 Y40",10,"G01 X68 Y40",10,"G01 X75 Y16",10,"G01 X64 Y16",10,"G01 X64 Y6",10,"G01 X96 Y6",10,"G01 X96 Y16",10,"G01 X88 Y16",10,"G01 X61 Y92",10,"G01 X71 Y92",10,"G01 X71 Y102",10,"G01 X30 Y102",10,"G01 X30 Y92",10,"G01 X40 Y92",10,"G01 X15 Y16",10,"G01 X6 Y16",10,"G01 X6 Y6",10,"G01 Z5",10,"G00 X38 Y45",10,"G01 Z-5",10,"G01 X65 Y45",10,"G01 X51  Y90",10,"G01 X38 Y45",10,"G01 X35 Y41",10,"G01 X68 Y41",10,"G01 X68 Y43",10,"G01 X35 Y43",10,"G01 X35 Y43",10,"G01 X68 Y43",10,"G01 X77 Y15",10,"G01 X65 Y15",10,"G01 X65 Y9",10,"G01 X95 Y9",10,"G01 X95 Y15",10,"G01 X88 Y15",10,"G01 X88 Y13",10,"G01 X93 Y13",10,"G01 X93 Y10",10,"G01 X67 Y10",10,"G01 X67 Y13",10,"G01 X77 Y13",10,"G01 X77 Y12",10,"G01 X68 Y12",10,"G01 X92 Y12",10,"G01 X92 Y13",10,"G01 X78 Y13",10,"G01 X78 Y15",10,"G01 X88 Y15",10,"G01 X86 Y16",10,"G01 X76 Y16",10,"G01 X53  Y90",10,"G01 X55 Y90",10,"G01 X78 Y16",10,"G01 X80  Y16",10,"G01 X57 Y90",10,"G01 X59 Y90",10,"G01 X82 Y16",10,"G01 X84 Y16",10,"G01 X61 Y90",10,"G01 X61 Y90",10,"G01 X86 Y16",10,"G01 X88 Y16 ",10,"G01 X60 Y91",10,"G01 X51 Y91",10,"G01 X51 Y94",10,"G01 X70 Y94",10,"G01 X70 Y101",10,"G01 X31 Y101",10,"G01 X31 Y99",10,"G01 X68 Y99",10,"G01 X68 Y98",10,"G01 X31 Y98",10,"G01 X31 Y96",10,"G01 X68 Y96",10,"G01 X68 Y95",10,"G01 X31 Y95",10,"G01 X31 Y93",10,"G01 X51 Y93",10,"G01 X26 Y16",10,"G01 X24 Y16",10,"G01 X50 Y95",10,"G01 X49 Y95",10,"G01 X23 Y16",10,"G01 X21 Y16",10,"G01 X47 Y95",10,"G01 X45 Y95",10,"G01 X20 Y16",10,"G01 X18 Y16",10,"G01 X43 Y95",10,"G01 X42 Y95",10,"G01 X16 Y16",10,"G01 X16 Y15",10,"G01 X7 Y15",10,"G01 X7 Y7",10,"G01 X38 Y7",10,"G01 X38 Y8",10,"G01 X8 Y8",10,"G01 X8 Y9",10,"G01 X38 Y9",10,"G01 X38 Y10",10,"G01 X8 Y10",10,"G01 X8 Y11",10,"G01 X38 Y11",10,"G01 X38 Y12",10,"G01 X8 Y12",10,"G01 X8 Y13",10,"G01 X38 Y13",10,"G01 X38 Y14",10,"G01 X8 Y14",10,"G01 X8 Y15",10,"G01 X38 Y15",10,"G01 Z5",10,"G00 X46 Y51",10,"G01 Z-5",10,"G01 X57 Y51",10,"G01 X51 Y76",10,"G01 X46 Y51",10,"G01 Z-9",10,"G01 X57 Y51",10,"G01 X51 Y76",10,"G01 X46 Y51",10,"G01 Z-13",10,"G01 X57 Y51",10,"G01 X51 Y76",10,"G01 X46 Y51",10,"G01 Z-17",10,"G01 X57 Y51",10,"G01 X51 Y76",10,"G01 X46 Y51",10,"G01 Z5",10,"G00 X0 Y0",10,"G01 Z-5",10,"G01 X0 Y20",10,"G01 X10 Y20",10,"G01 X31 Y86",10,"G01 X22 Y86",10,"G01 X22 Y107",10,"G01 X77 Y107",10,"G01 X77 Y86",10,"G01 X69 Y86",10,"G01 X92 Y20",10,"G01 X101 Y20",10,"G01 X101 Y0",10,"G01 X58 Y0",10,"G01 X58 Y20",10,"G01 X67 Y20",10,"G01 X63 Y34",10,"G01 X39 Y34",10,"G01 X35 Y20",10,"G01 X43 Y20",10,"G01 X43 Y0",10,"G01 X0 Y0",10,"G01 Z-9",10,"G01 X0 Y20",10,"G01 X10 Y20",10,"G01 X31 Y86",10,"G01 X22 Y86",10,"G01 X22 Y107",10,"G01 X77 Y107",10,"G01 X77 Y86",10,"G01 X69 Y86",10,"G01 X92 Y20",10,"G01 X101 Y20",10,"G01 X101 Y0",10,"G01 X58 Y0",10,"G01 X58 Y20",10,"G01 X67 Y20",10,"G01 X63 Y34",10,"G01 X39 Y34",10,"G01 X35 Y20",10,"G01 X43 Y20",10,"G01 X43 Y0",10,"G01 X0 Y0",10,"G01 Z-13",10,"G01 X0 Y20",10,"G01 X10 Y20",10,"G01 X31 Y86",10,"G01 X22 Y86",10,"G01 X22 Y107",10,"G01 X77 Y107",10,"G01 X77 Y86",10,"G01 X69 Y86",10,"G01 X92 Y20",10,"G01 X101 Y20",10,"G01 X101 Y0",10,"G01 X58 Y0",10,"G01 X58 Y20",10,"G01 X67 Y20",10,"G01 X63 Y34",10,"G01 X39 Y34",10,"G01 X35 Y20",10,"G01 X43 Y20",10,"G01 X43 Y0",10,"G01 X0 Y0",10,"G01 Z-17",10,"G01 X0 Y20",10,"G01 X10 Y20",10,"G01 X31 Y86",10,"G01 X22 Y86",10,"G01 X22 Y107",10,"G01 X77 Y107",10,"G01 X77 Y86",10,"G01 X69 Y86",10,"G01 X92 Y20",10,"G01 X101 Y20",10,"G01 X101 Y0",10,"G01 X58 Y0",10,"G01 X58 Y20",10,"G01 X67 Y20",10,"G01 X63 Y34",10,"G01 X39 Y34",10,"G01 X35 Y20",10,"G01 X43 Y20",10,"G01 X43 Y0",10,"G01 X0 Y0",10,"G01 Z5",10,"G00 X0 Y0 Z5",10,"M00",'$'
 .equ   baud=9600      ;baudios
 ;.equ   fosc=1000000   ;frecuencia
 .equ   fosc=8000000   ;frecuencia
@@ -24,60 +22,15 @@ start:
 ;Inicializacion de puertos
 	outi DDRB,0xFF
 	outi DDRC,0x0F
-	outi PORTB,0xFF
-	outi PORTC,0x0F
+	outi PORTB,0x00
+	outi PORTC,0x00
 ;==========================================
-	initSerial
-	call clear
-config_loop:
-	puts msg_config,0
-	getn t0,1
-	cpi t0,0
-	breq error
-	cpi t0,9
-	breq error
-	initCNC t0
-	//cnctest
-	call clear
-	call loop
-error:
-	call println
-	puts msg_error_config,0
-	rjmp config_loop
-
+	initCNC
+	cnctestmax
 loop:
-	puts msg_welcome,0
-	x_add
-rjmp loop
-	putci '>'
-	call gets
-	call println
-	delay 1000
-rjmp loop
+
 ret
 
-gets:
-	fgets
-ret
-println:
-	putci 13
-	putci 10
-ret
- 
-clear:
-	save
-		putci 033
-		putci '['
-		putci '2'
-		putci 'J'
-		putci 033
-		putci '['
-		putci '0'
-		putci ';'
-		putci '0'
-		putci 'H'
-	load
-ret
 xadd:
 	push t0
 	x_add
@@ -107,4 +60,7 @@ zsub:
 	push t0
 	z_sub
 	pop t0
+ret
+error:
+	rjmp error
 ret

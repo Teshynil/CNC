@@ -110,6 +110,9 @@
     <Compile Include="serial.inc">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="serialfake.inc">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Assembler.targets" />
 </Project>
